@@ -2,10 +2,10 @@
   "name": "firstmovieintheworld",
   "version": "1.0.0",
   "description": "voting for the best movie ever website",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "nodemon src/app.ts",
+    "server": "nodemon server.ts",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "repository": {
