@@ -20,8 +20,9 @@
   "homepage": "https://github.com/MarkosMalek/BestMovieRank#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "dotenv": "^16.0.3",
+    "express": "^4.17.3",
+    "mongoose": "^6.6.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
