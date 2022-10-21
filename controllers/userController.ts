@@ -43,9 +43,27 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
   }
 });
 
-const loginUser = (req: Request, res: Response) => {
-  res.status(200).json({ message: "login user" });
-};
+//Route /api/users/login
+//@Disc  login an existing user
+const loginUser = asyncHandler(async (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    res.status(400);
+    throw new Error("please enter all fields");
+  }
+  const user = await User.findOne({ email });
+  if (user && (await bcrypt.compare(password, user.password))) {
+    res.status(201).json({
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+    });
+  } else {
+    res.status(400);
+    throw new Error("invalid credentials");
+  }
+});
 const loggedUser = (req: Request, res: Response) => {
   res.status(200).json({ message: "who is logged in" });
 };
