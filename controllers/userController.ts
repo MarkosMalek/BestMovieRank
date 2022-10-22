@@ -7,7 +7,6 @@ const User = require("../models/userModel");
 //Route /api/users/register
 //@Disc  create new user
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
-  console.log(req.body);
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
     res.status(400);
@@ -69,8 +68,13 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
 
 //Route /api/users/me
 //@Disc  get logged in user data
-const loggedUser = asyncHandler(async (req: Request, res: Response) => {
-  res.status(200).json({ message: "who is logged in" });
+const loggedUser = asyncHandler(async (req: any, res: Response) => {
+  const { name, email, _id } = await User.findById(req.user.id);
+  res.status(200).json({
+    name,
+    email,
+    id: _id,
+  });
 });
 
 //generate JWT
