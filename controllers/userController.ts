@@ -67,16 +67,17 @@ const loginUser = asyncHandler(async (req: Request, res: Response) => {
   }
 });
 
+//Route /api/users/me
+//@Disc  get logged in user data
+const loggedUser = asyncHandler(async (req: Request, res: Response) => {
+  res.status(200).json({ message: "who is logged in" });
+});
+
 //generate JWT
 const generateToken = (id: string) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "10d",
   });
-};
-//Route /api/users/me
-//@Disc  get logged in user data
-const loggedUser = (req: Request, res: Response) => {
-  res.status(200).json({ message: "who is logged in" });
 };
 module.exports = {
   registerUser,

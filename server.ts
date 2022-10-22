@@ -10,8 +10,8 @@ app.use(cors());
 
 connectDB();
 
-app.listen(8080, () =>
-  console.log("server is listening at http://localhost:8080")
+app.listen(3005, () =>
+  console.log("server is listening at http://localhost:3005")
 );
 
 app.use("/api/users", require("./routes/userRoutes"));
