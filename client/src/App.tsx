@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
+import SignUp from "./components/signUp";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Hello Markos</h1>
+      <SignUp />
     </div>
   );
-}
+};
 
 export default App;

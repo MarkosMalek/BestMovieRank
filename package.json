@@ -2,10 +2,10 @@
   "name": "firstmovieintheworld",
   "version": "1.0.0",
   "description": "voting for the best movie ever website",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "nodemon src/app.ts",
+    "server": "nodemon server.ts",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "repository": {
@@ -19,9 +19,13 @@
   },
   "homepage": "https://github.com/MarkosMalek/BestMovieRank#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "dotenv": "^16.0.3",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

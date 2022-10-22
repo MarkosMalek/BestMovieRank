@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+.form {
+  min-width: 40%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
